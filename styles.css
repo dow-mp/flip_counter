@@ -1,24 +1,74 @@
 :root{
     font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(233, 233, 233);
   }
   
-  .container {
-    border: 3px solid black;
-    width: 60vw;
-    height: 40vh;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+* {
+  box-sizing: border-box;
+}
+
+.container {   
+  border: 3px solid black;
+  width: 60vw;
+  height: 40vh;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.flip-card {
+  margin-top: 15%;
+  border-radius: .5em;
+  box-shadow: 5px 3px 5px black;
+  position: relative;
+  background-color: rgb(255, 240, 221);
+}
+
+.counter-top, .counter-bottom {
+  height: .575em;
+  width: 0.75em;
+  display: flex;
+  font-size: 5rem;
+  justify-content: center;
+}
+
+.counter-top {
+  background-color: rgb(255, 240, 221);
+  border-bottom: 1px solid rgb(197, 197, 197);
+  border-radius: .1em .1em 0 0;
+  overflow: hidden;
+  animation: top-half 500ms ease-in 2s;
+  transform-origin: bottom;
+}
+
+@keyframes top-half {
+  from {
+    transform: rotateX(0deg);
   }
-  
-  .counter-L, .counter-R {
-    border: 3px solid hotpink;
-    height: 60%;
-    width: 30%;
-    border-radius: 10px;
+  to {
+    transform: rotateX(90deg);
   }
-  
-  .counter-R {
-    border: 3px solid purple;
+}
+
+.counter-bottom {
+  background-color: rgb(253, 244, 233);
+  /* border: 3px solid hotpink; */
+  border-radius:  0 0 .1em .1em;
+  overflow: hidden;
+  align-items: flex-end;
+  animation: bottom-half 500ms ease-out 2500ms;
+  transform-origin: top;
+}
+
+@keyframes bottom-half {
+  from {
+    transform: rotateX(90deg);
   }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+
