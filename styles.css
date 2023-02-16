@@ -7,15 +7,20 @@
 * {
   box-sizing: border-box;
 }
+.body {
+  display: flex;
+  flex-direction: row;
+}
 
 .container {   
-  border: 3px solid black;
+  /* border: 3px solid black; */
   width: 60vw;
-  height: 40vh;
+  height: 80vh;
   margin: 0 auto;
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .flip-card {
@@ -39,8 +44,12 @@
   border-bottom: 1px solid rgb(197, 197, 197);
   border-radius: .1em .1em 0 0;
   overflow: hidden;
-  animation: top-half 500ms ease-in 2s;
-  transform-origin: bottom;
+  /* -moz-animation-name: top-half;
+  -moz-animation-duration:1500ms; 
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-delay: 4s; */
+  /* animation: top-half 250ms ease-in;
+  transform-origin: bottom; */
 }
 
 @keyframes top-half {
@@ -58,8 +67,40 @@
   border-radius:  0 0 .1em .1em;
   overflow: hidden;
   align-items: flex-end;
-  animation: bottom-half 500ms ease-out 2500ms;
+  /* -moz-animation-name: bottom-half;
+  -moz-animation-duration: 1500ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-delay: 5s; */
+  /* animation: bottom-half 250ms ease-out 250ms; */
+  /* transform-origin: top; */
+  /* -webkit-animation-delay: 1500ms;
+  -moz-animation-delay: 1500ms;
+  -ms-animation-delay: 1500ms;
+  -o-animation-delay: 1500ms;
+  animation-delay: 1500ms; */
+}
+
+.one-seconds .counter-top {
+    /* -moz-animation-name: top-half;
+  -moz-animation-duration:1500ms; 
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-delay: 4s; */
+  animation: top-half 250ms ease-in;
+  transform-origin: bottom;
+}
+
+.one-seconds .counter-bottom {
+  /* -moz-animation-name: bottom-half;
+  -moz-animation-duration: 1500ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-delay: 5s; */
+  animation: bottom-half 250ms ease-out 250ms;
   transform-origin: top;
+  /* -webkit-animation-delay: 1500ms;
+  -moz-animation-delay: 1500ms;
+  -ms-animation-delay: 1500ms;
+  -o-animation-delay: 1500ms;
+  animation-delay: 1500ms; */
 }
 
 @keyframes bottom-half {
